@@ -1,6 +1,7 @@
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+document.getElementById('loadQuote').addEventListener("click", randomColor, false);
 
 var quotes = [
   {quote: "Milk is for babies.", source: "Arnold Schwarzenegger", citation: "Pumping Iron", year: "1977"},
@@ -34,4 +35,12 @@ function printQuote() {
   if (randomQuote.source === undefined) {
     document.querySelector(".source").style.display = 'none';
   }
+}
+
+function randomColor() {
+  var r = Math.floor(Math.random() * 256);
+  var g = Math.floor(Math.random() * 256);
+  var b = Math.floor(Math.random() * 256);
+  var theColor = `rgb(${r}, ${g}, ${b})`;
+  document.querySelector('body').style.backgroundColor = theColor;
 }

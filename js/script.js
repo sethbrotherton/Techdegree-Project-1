@@ -1,8 +1,9 @@
 // event listener to respond to "Show another quote" button clicks
 // when user clicks anywhere on the button, the "printQuote" function is called
-document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+var printEvent = document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 // when user clicks anywhere on the button, the "randomColor" function is called
-document.getElementById('loadQuote').addEventListener("click", randomColor, false);
+var colorEvent = document.getElementById('loadQuote').addEventListener("click", randomColor, false);
+
 
 // the quotes and their origins
 var quotes = [
@@ -23,34 +24,35 @@ function getRandomQuote() {
   return quotes[randomNumber];
 }
 
+
 // prints the random quote generated to the document
 function printQuote() {
-  var randomQuote = getRandomQuote();
-  var html = `
-  <p class="quote">${randomQuote.quote}</p>
-  <p class="source">${randomQuote.source}
-    <span class="citation">${randomQuote.citation}</span>
-    <span class="year">${randomQuote.year}</span>
-  </p>
-  <div class="tagWrapper">
+    var randomQuote = getRandomQuote();
+    var html = `
+    <p class="quote">${randomQuote.quote}</p>
+    <p class="source">${randomQuote.source}
+      <span class="citation">${randomQuote.citation}</span>
+      <span class="year">${randomQuote.year}</span>
+    </p>
     <span class="tags">${randomQuote.tags}</span>
-  </div>
-  `;
-  document.getElementById('quote-box').innerHTML = html;
-// if any of these following properties are lacking, "undefined" will not be displayed
-  if (randomQuote.citation === undefined) {
-    document.querySelector(".citation").style.display = 'none';
+    `;
+    document.getElementById('quote-box').innerHTML = html;
+
+  // // if any of these following properties are lacking, "undefined" will not be displayed
+    if (randomQuote.citation === undefined) {
+      document.querySelector(".citation").style.display = 'none';
+    }
+    if (randomQuote.year === undefined) {
+      document.querySelector(".year").style.display = 'none';
+    }
+    if (randomQuote.source === undefined) {
+      document.querySelector(".source").style.display = 'none';
+    }
+    if (randomQuote.tags === undefined) {
+      document.querySelector(".tags").style.display = 'none';
+    }
   }
-  if (randomQuote.year === undefined) {
-    document.querySelector(".year").style.display = 'none';
-  }
-  if (randomQuote.source === undefined) {
-    document.querySelector(".source").style.display = 'none';
-  }
-  if (randomQuote.tags === undefined) {
-    document.querySelector(".tags").style.display = 'none';
-  }
-}
+
 
 // generates a random rgb background-color and displays on document
 function randomColor() {
@@ -62,5 +64,5 @@ function randomColor() {
 }
 
 // if button is not clicked on, quote and background-color will still be updated every 30 seconds
-setInterval(printQuote, 30000);
-setInterval(randomColor, 30000);
+setInterval(printQuote, 20000);
+setInterval(randomColor, 20000);

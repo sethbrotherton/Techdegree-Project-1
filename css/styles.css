@@ -58,12 +58,15 @@ body {
 }
 
 .tagWrapper{
-  text-align: center;
+  text-align: right;
+  padding-top: 50px;
 }
 .tags {
   padding: 5px 10px;
   border-radius: 7%;
-  text-align: center;
+  width: 100%;
+  margin-right: 60px;
+  padding-top: 50px;
 }
 
 #loadQuote {

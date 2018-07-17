@@ -41,6 +41,7 @@ body {
   line-height: 1.1;
   text-align: right;
   margin-right: 4em;
+  margin-bottom: 1.5em;
 }
 .source:before {
   content: "—";
@@ -57,16 +58,18 @@ body {
   font-style: normal;
 }
 
-.tagWrapper{
-  text-align: right;
-  padding-top: 50px;
+.tagLinks {
+  margin-right: 30px;
+  border: 2px solid #fff;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: rgb(20, 130, 200);
+  text-decoration: none;
+  color: white;
 }
-.tags {
-  padding: 5px 10px;
-  border-radius: 7%;
-  width: 100%;
-  margin-right: 60px;
-  padding-top: 50px;
+
+.tagLinks:hover {
+  background-color: rgb(255, 255, 255, .25);
 }
 
 #loadQuote {

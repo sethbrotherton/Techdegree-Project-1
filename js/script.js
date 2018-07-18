@@ -52,7 +52,7 @@ function printQuote() {
     // adds each tag as an individual anchor element
     if (randomQuote.tags !== undefined) {
       for (var i = 0; i < randomQuote.tags.length; i++) {
-        html += '<a class="tagLinks" href="#">' + randomQuote.tags[i] + '</a>';
+        html += `<a class="tagLinks" href="#">${randomQuote.tags[i]}</a>`;
       }
     }
     document.getElementById('quote-box').innerHTML = html;
